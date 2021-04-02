@@ -6,13 +6,17 @@ namespace Idle
     public sealed class UIManager : MonoBehaviour
     {
         //enum
-        public enum ShopScreenType { Closed, CityScreen, ResidentsScreen, ComfortScreen, AutomationScreen }
+        public enum ShopScreenType { Closed, CarProfitsScreen, CarDevelopmentScreen, CompanyAcquisitionScreen, StockScreen, ItemScreen, SocialMovementScreen, SpacecraftDevelopmentScreen, SpaceDevelopmentScreen}
 
         [Header("Screens")]
-        public GameObject CityScreen;
-        public GameObject ResidentsScreen;
-        public GameObject ComfortScreen;
-        public GameObject AutomationScreen;
+        public GameObject CarProfitsScreen;
+        public GameObject CarDevelopmentScreen;
+        public GameObject CompanyAcquisitionScreen;
+        public GameObject StockScreen;
+        public GameObject ItemScreen;
+        public GameObject SocialMovementScreen;
+        public GameObject SpacecraftDevelopmentScreen;
+        public GameObject SpaceDevelopmentScreen;
 
         [Header("Text")]
         public Text MoneyText;
@@ -76,18 +80,30 @@ namespace Idle
         {
             switch (screenName)
             {
-                case "CityScreen":
+                case "CarProfitsScreen":
                     //Call open method
-                    ChangeShopScreen(ShopScreenType.CityScreen);
+                    ChangeShopScreen(ShopScreenType.CarProfitsScreen);
                     break;
-                case "ResidentsScreen":
-                    ChangeShopScreen(ShopScreenType.ResidentsScreen);
+                case "CarDevelopmentScreen":
+                    ChangeShopScreen(ShopScreenType.CarDevelopmentScreen);
                     break;
-                case "ComfortScreen":
-                    ChangeShopScreen(ShopScreenType.ComfortScreen);
+                case "CompanyAcquisitionScreen":
+                    ChangeShopScreen(ShopScreenType.CompanyAcquisitionScreen);
                     break;
-                case "AutomationScreen":
-                    ChangeShopScreen(ShopScreenType.AutomationScreen);
+                case "StockScreen":
+                    ChangeShopScreen(ShopScreenType.StockScreen);
+                    break;
+                case "ItemScreen":
+                    ChangeShopScreen(ShopScreenType.ItemScreen);
+                    break;
+                case "SocialMovementScreen":
+                    ChangeShopScreen(ShopScreenType.SocialMovementScreen);
+                    break;
+                case "SpacecraftDevelopmentScreen":
+                    ChangeShopScreen(ShopScreenType.SpacecraftDevelopmentScreen);
+                    break;
+                case "SpaceDevelopmentScreen":
+                    ChangeShopScreen(ShopScreenType.SpaceDevelopmentScreen);
                     break;
             }
 
@@ -109,23 +125,39 @@ namespace Idle
                 CloseShopScreens();
                 switch (shopScreenType)
                 {
-                    case ShopScreenType.CityScreen:
+                    case ShopScreenType.CarProfitsScreen:
                         //set the class variable shopScreenType to local shopScreenType
                         this.shopScreenType = shopScreenType;
                         //Turn on the screen
-                        CityScreen.SetActive(true);
+                        CarProfitsScreen.SetActive(true);
                         break;
-                    case ShopScreenType.ResidentsScreen:
+                    case ShopScreenType.CarDevelopmentScreen:
                         this.shopScreenType = shopScreenType;
-                        ResidentsScreen.SetActive(true);
+                        CarDevelopmentScreen.SetActive(true);
                         break;
-                    case ShopScreenType.ComfortScreen:
+                    case ShopScreenType.CompanyAcquisitionScreen:
                         this.shopScreenType = shopScreenType;
-                        ComfortScreen.SetActive(true);
+                        CompanyAcquisitionScreen.SetActive(true);
                         break;
-                    case ShopScreenType.AutomationScreen:
+                    case ShopScreenType.StockScreen:
                         this.shopScreenType = shopScreenType;
-                        AutomationScreen.SetActive(true);
+                        StockScreen.SetActive(true);
+                        break;
+                    case ShopScreenType.ItemScreen:
+                        this.shopScreenType = shopScreenType;
+                        ItemScreen.SetActive(true);
+                        break;
+                    case ShopScreenType.SocialMovementScreen:
+                        this.shopScreenType = shopScreenType;
+                        SocialMovementScreen.SetActive(true);
+                        break;
+                    case ShopScreenType.SpacecraftDevelopmentScreen:
+                        this.shopScreenType = shopScreenType;
+                        SpacecraftDevelopmentScreen.SetActive(true);
+                        break;
+                    case ShopScreenType.SpaceDevelopmentScreen:
+                        this.shopScreenType = shopScreenType;
+                        SpaceDevelopmentScreen.SetActive(true);
                         break;
                 }
 
@@ -138,10 +170,14 @@ namespace Idle
         void CloseShopScreens()
         {
             //Just turn off all screens, nothing ordinary :)
-            CityScreen.SetActive(false);
-            ResidentsScreen.SetActive(false);
-            ComfortScreen.SetActive(false);
-            AutomationScreen.SetActive(false);
+            CarProfitsScreen.SetActive(false);
+            CarDevelopmentScreen.SetActive(false);
+            CompanyAcquisitionScreen.SetActive(false);
+            StockScreen.SetActive(false);
+            ItemScreen.SetActive(false);
+            SocialMovementScreen.SetActive(false);
+            SpacecraftDevelopmentScreen.SetActive(false);
+            SpaceDevelopmentScreen.SetActive(false);
         }
         #endregion
         #region//Screens
