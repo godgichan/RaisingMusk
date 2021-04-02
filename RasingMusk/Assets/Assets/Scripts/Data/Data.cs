@@ -17,13 +17,11 @@ namespace Idle
     [Serializable]
     public class UpgradeData
     {
-        public List<ItemData> cityItems = new List<ItemData>();
-        public List<ItemData> residentsItems = new List<ItemData>();
-        public List<ItemData> comfortItems = new List<ItemData>();
-        public List<ItemData> automationItems = new List<ItemData>();
+        public List<ItemData> carProfitsItems = new List<ItemData>();
+        public List<ItemData> CompanyAcquisitionItems = new List<ItemData>();
+        public List<ItemData> carDevelopmentItems = new List<ItemData>();
 
-        public int comfortLvl;
-        public int residentsLvl;
+        public int companyAcquisitionLvl;
     }
 
 

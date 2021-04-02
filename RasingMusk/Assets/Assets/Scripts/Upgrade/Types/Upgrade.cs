@@ -17,7 +17,7 @@ namespace Idle
             {
                 //With a successful purchase
                 DataManager.data.Money -= items[id].itemData.price; //take money
-                items[id].itemData.price = items[id].itemData.price * 2; //Increasing the price by 2
+                items[id].itemData.price = items[id].itemData.price + 2; //Increasing the price by 2
                 priced = true; //Approve further logic.
             }
         }

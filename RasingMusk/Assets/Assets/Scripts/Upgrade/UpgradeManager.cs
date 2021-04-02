@@ -6,10 +6,9 @@ namespace Idle
     {
 
         [Header("Components")]
-        public CityUpgrade cityUpgrade;
-        public ResidentsUpgrade residentsUpgrade;
-        public ComfortUpgrade comfortUpgrade;
-        public AutomationUpgrade automationUpgrade;
+        public CarProfitsUpgrade carProfitsUpgrade;
+        public CompanyAcquisitionUpgrade companyAcquisitionUpgrade;
+        public CarDevelopmentUpgrade carDevelopmentUpgrade; //버튼 항목별로 다 만들어주기
 
         private void Awake()
         {
@@ -18,24 +17,19 @@ namespace Idle
         }
 
         ////////////////////////////////// Start: Calls upgrades from buttons
-        public void CityUpgrage(int itemId)
+        public void CarProfitsUpgrade(int itemId)
         {
-            cityUpgrade.UpgradeItem(itemId); //Call the upgrade method in the City Upgrade script (whose ID item is the upgrade)
+            carProfitsUpgrade.UpgradeItem(itemId); //Call the upgrade method in the City Upgrade script (whose ID item is the upgrade)
         }
 
-        public void ResidentsUpgrade(int itemId)
+        public void CompanyAcquisitionUpgrade(int itemId)
         {
-            residentsUpgrade.UpgradeItem(itemId);
+            companyAcquisitionUpgrade.UpgradeItem(itemId);
         }
 
-        public void ComfortUpgrade(int itemId)
+        public void CarDevelopmentUpgrade(int itemId)
         {
-            comfortUpgrade.UpgradeItem(itemId);
-        }
-
-        public void AutomationUpgrade(int itemId)
-        {
-            automationUpgrade.UpgradeItem(itemId);
+            carDevelopmentUpgrade.UpgradeItem(itemId);
         }
         ////////////////////////////////// End
 
@@ -43,10 +37,9 @@ namespace Idle
         //Update UI
         public void UpdateUI()
         {
-            cityUpgrade.UpdateUI();
-            residentsUpgrade.UpdateUI();
-            comfortUpgrade.UpdateUI();
-            automationUpgrade.UpdateUI();
+            carProfitsUpgrade.UpdateUI();
+            companyAcquisitionUpgrade.UpdateUI();
+            carDevelopmentUpgrade.UpdateUI();
         }
 
         //saving upgrade data to file
@@ -56,21 +49,17 @@ namespace Idle
             UpgradeListClear();
 
             //Write items to the cleared list
-            for (int i = 0; i < cityUpgrade.items.Count; i++)
+            for (int i = 0; i < carProfitsUpgrade.items.Count; i++)
             {
-                DataManager.upgradeData.cityItems.Add(cityUpgrade.items[i].itemData);
+                DataManager.upgradeData.carProfitsItems.Add(carProfitsUpgrade.items[i].itemData);
             }
-            for (int i = 0; i < residentsUpgrade.items.Count; i++)
+            for (int i = 0; i < companyAcquisitionUpgrade.items.Count; i++)
             {
-                DataManager.upgradeData.residentsItems.Add(residentsUpgrade.items[i].itemData);
+                DataManager.upgradeData.CompanyAcquisitionItems.Add(companyAcquisitionUpgrade.items[i].itemData);
             }
-            for (int i = 0; i < comfortUpgrade.items.Count; i++)
+            for (int i = 0; i < carDevelopmentUpgrade.items.Count; i++)
             {
-                DataManager.upgradeData.comfortItems.Add(comfortUpgrade.items[i].itemData);
-            }
-            for (int i = 0; i < automationUpgrade.items.Count; i++)
-            {
-                DataManager.upgradeData.automationItems.Add(automationUpgrade.items[i].itemData);
+                DataManager.upgradeData.carDevelopmentItems.Add(carDevelopmentUpgrade.items[i].itemData);
             }
 
             //save all data
@@ -79,26 +68,21 @@ namespace Idle
         //load data
         public void UpgradeLoad()
         {
-            if (DataManager.upgradeData.cityItems.Count > 0)
-                for (int i = 0; i < cityUpgrade.items.Count; i++)
+            if (DataManager.upgradeData.carProfitsItems.Count > 0)
+                for (int i = 0; i < carProfitsUpgrade.items.Count; i++)
                 {
                     //write item from file to item on scene
-                    cityUpgrade.items[i].itemData = DataManager.upgradeData.cityItems[i];
+                    carProfitsUpgrade.items[i].itemData = DataManager.upgradeData.carProfitsItems[i];
                 }
-            if (DataManager.upgradeData.residentsItems.Count > 0)
-                for (int i = 0; i < residentsUpgrade.items.Count; i++)
+            if (DataManager.upgradeData.CompanyAcquisitionItems.Count > 0)
+                for (int i = 0; i < companyAcquisitionUpgrade.items.Count; i++)
                 {
-                    residentsUpgrade.items[i].itemData = DataManager.upgradeData.residentsItems[i];
+                    companyAcquisitionUpgrade.items[i].itemData = DataManager.upgradeData.CompanyAcquisitionItems[i];
                 }
-            if (DataManager.upgradeData.comfortItems.Count > 0)
-                for (int i = 0; i < comfortUpgrade.items.Count; i++)
+            if (DataManager.upgradeData.carDevelopmentItems.Count > 0)
+                for (int i = 0; i < carDevelopmentUpgrade.items.Count; i++)
                 {
-                    comfortUpgrade.items[i].itemData = DataManager.upgradeData.comfortItems[i];
-                }
-            if (DataManager.upgradeData.automationItems.Count > 0)
-                for (int i = 0; i < automationUpgrade.items.Count; i++)
-                {
-                    automationUpgrade.items[i].itemData = DataManager.upgradeData.automationItems[i];
+                    carDevelopmentUpgrade.items[i].itemData = DataManager.upgradeData.carDevelopmentItems[i];
                 }
 
         }
@@ -106,10 +90,9 @@ namespace Idle
         //Сlear method
         void UpgradeListClear()
         {
-            DataManager.upgradeData.cityItems.Clear();
-            DataManager.upgradeData.residentsItems.Clear();
-            DataManager.upgradeData.comfortItems.Clear();
-            DataManager.upgradeData.automationItems.Clear();
+            DataManager.upgradeData.carProfitsItems.Clear(); 
+            DataManager.upgradeData.CompanyAcquisitionItems.Clear();
+            DataManager.upgradeData.carDevelopmentItems.Clear();
         }
     }
 }
