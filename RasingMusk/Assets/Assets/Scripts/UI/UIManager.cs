@@ -35,7 +35,7 @@ namespace Idle
         public void UpdateUI()
         {
             //Assign text
-            MoneyText.text = IntParseToString(DataManager.data.Money);
+            MoneyText.text = IntParseToString(DataManager.data.Money)+ " 원";
             MoneyPerSecondText.text = "+" + IntParseToString(DataManager.data.MoneyPerSecond) + " /s";
 
 
