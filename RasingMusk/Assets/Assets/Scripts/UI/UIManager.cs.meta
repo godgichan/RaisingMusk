@@ -3,7 +3,17 @@ guid: 508ab94ffeaa36343b661b5c4f8de3bf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CarProfitsScreen: {instanceID: 0}
+  - CarDevelopmentScreen: {instanceID: 0}
+  - CompanyAcquisitionScreen: {instanceID: 0}
+  - StockScreen: {instanceID: 0}
+  - ItemScreen: {instanceID: 0}
+  - SocialMovementScreen: {instanceID: 0}
+  - SpacecraftDevelopmentScreen: {instanceID: 0}
+  - SpaceDevelopmentScreen: {instanceID: 0}
+  - MoneyText: {instanceID: 0}
+  - MoneyPerSecondText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

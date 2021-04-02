@@ -25,6 +25,7 @@ namespace Idle
         //Method to pause
         public void Pause()
         {
+			Debug.Log("퍼스");
             Managers.Instance.uIManager.ChangeScreen("PauseMenu");
         }
 
